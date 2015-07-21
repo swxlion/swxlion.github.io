@@ -508,6 +508,8 @@ td {
 .icon-archives,
 .icon-tags,
 .icon-about,
+.icon-chinese,
+.icon-english,
 .icon-feed {
   font-size: 24px;
   color: #000;
@@ -534,7 +536,13 @@ td {
   content: "\e610";
 }
 .icon-about:before {
-  content: "\e612";
+  content: "\e624";
+}
+.icon-chinese:before {
+  content: "\e618";
+}
+.icon-english:before {
+  content: "\e618";
 }
 .icon-feed:before {
   content: "\e62b";
@@ -1148,7 +1156,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f5e2ff;
+  background: #4baae0;
 }
 .sidebar-nav {
   margin: 0;
