@@ -28,7 +28,7 @@
 
 
 
-  <meta name="keywords" content="swxlion,Hexo,next" />
+  <meta name="keywords" content="distributed,flexibility,performance,server,service," />
 
 
 
@@ -37,15 +37,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="swxlion">
-<meta property="og:url" content="http://swxlion.github.io/index.html">
+<meta name="description" content="Reason for the IntroductionAt the beginning, I had no intention of writting an introduction to arrange and record all my encountered, all my learnt, and all my done in the field of high performance &amp;a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="High-Performance & High-Flexibility Distributed System Introduction: 1">
+<meta property="og:url" content="http://swxlion.github.io/2015/07/25/High-Performance-High-Flexibility-Distributed-System-Introduction-1/index.html">
 <meta property="og:site_name" content="swxlion">
-<meta property="og:description">
+<meta property="og:description" content="Reason for the IntroductionAt the beginning, I had no intention of writting an introduction to arrange and record all my encountered, all my learnt, and all my done in the field of high performance &amp;a">
+<meta property="og:updated_time" content="2015-07-26T03:47:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="swxlion">
-<meta name="twitter:description">
+<meta name="twitter:title" content="High-Performance & High-Flexibility Distributed System Introduction: 1">
+<meta name="twitter:description" content="Reason for the IntroductionAt the beginning, I had no intention of writting an introduction to arrange and record all my encountered, all my learnt, and all my done in the field of high performance &amp;a">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -55,7 +56,7 @@
   };
 </script>
 
-    <title> swxlion </title>
+    <title> High-Performance & High-Flexibility Distributed System Introduction: 1 // swxlion </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 <!--[if lte IE 8]>
@@ -71,9 +72,7 @@
 
 
 
-<div class="container one-column 
-   page-home 
-">
+<div class="container one-column page-post-detail">
     <div class="headband"></div>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
         <div class="header-inner"><h1 class="site-meta">
@@ -163,9 +162,9 @@
         <div class="main-inner">
             <div id="content" class="content">
                 
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -176,121 +175,7 @@
           
           
             
-              <a class="post-title-link" href="/2015/07/25/High-Performance-High-Flexibility-Distributed-System-Introduction-2/" itemprop="url">
-                High-Performance & High-Flexibility Distributed System Introduction: 2
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-07-25T19:59:17+08:00" content="2015-07-25">
-            2015-07-25
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/architecture-design/" itemprop="url" rel="index"><span itemprop="name">architecture design</span></a></span>
-
-              
-              
-                , 
-              
-
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/architecture-design/backend-services/" itemprop="url" rel="index"><span itemprop="name">backend services</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h1 id="Foreword"><center>Foreword</center></h1><p>This is a guide book for fresh man in high-performance &amp; high-flexibility distributed system field.</p>
-<p>This is not a teaching material, beacuse it cannot teach a beginner to implement a high-performance service or a high-performance application server step by step.<br>This is just a guide. On the way a fresh man become a proficient distributed architect or system architect, it can tell the man, waht will he encounter, which is the key point, and which solutions can reference to.</p>
-<p>According to the original idea, this introduction will involve the following aspects:</p>
-<ul>
-<li>What is the high-performance? And what is the high-flexibility?</li>
-<li>Technology Evolvement: from nothing to network library, from network library to RPC framework, from RPC framework to services ecological environment.</li>
-<li>The components of services ecological environment.</li>
-<li>Network Engine Design</li>
-<li>Network Library Design</li>
-<li>RPC Framework Design</li>
-<li>Services Ecological Environment Design</li>
-<li>New Agile Way: super fast development &amp; rules, base on services ecological environment.</li>
-<li>The performance &amp; capability of current projects</li>
-<li>The kinds of cluster</li>
-<li>Cluster Management Design</li>
-<li>Load Balance</li>
-<li>Decentralization</li>
-<li>Stateless</li>
-<li>Message Queue</li>
-<li>Front-end Extension</li>
-<li>Encapsulate for data layer</li>
-<li>Data Router</li>
-<li>Distributed Stroage</li>
-<li>Distributed Key-value Strogae</li>
-<li>Distributed Caches: special cache vs. general cache vs. common cache</li>
-<li>Message Coordination</li>
-<li>Intercontinental Coordination</li>
-<li>Distributed Logger</li>
-<li>Real-time Computation</li>
-<li>Others</li>
-<li>Last: the misconception about algorithm &amp; Database Performance Tuning &amp; etc.</li>
-</ul>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/25/High-Performance-High-Flexibility-Distributed-System-Introduction-1/" itemprop="url">
-                High-Performance & High-Flexibility Distributed System Introduction: 1
-              </a>
+              High-Performance & High-Flexibility Distributed System Introduction: 1
             
           
         </h1>
@@ -337,8 +222,7 @@
       
 
       
-        
-          <span itemprop="articleBody"><h1 id="Reason_for_the_Introduction"><center>Reason for the Introduction</center></h1><p>At the beginning, I had no intention of writting an introduction to arrange and record all my encountered, all my learnt, and all my done in the field of high performance &amp; high flexibility distributed ststems. At off-duty time, don’t talk about work.</p>
+        <span itemprop="articleBody"><h1 id="Reason_for_the_Introduction"><center>Reason for the Introduction</center></h1><p>At the beginning, I had no intention of writting an introduction to arrange and record all my encountered, all my learnt, and all my done in the field of high performance &amp; high flexibility distributed ststems. At off-duty time, don’t talk about work.</p>
 <p>Until the day, I saw many qustions and answers at <a href="http://www.zhihu.com" target="_blank" rel="external">Zhihu.com</a> (a Chinese Quora), such as following:</p>
 <pre><code>Q: How <span class="keyword">to</span> implement a high concurrency <span class="type">application</span> server <span class="keyword">by</span> using epoll?
 A: The codes <span class="keyword">with</span> epoll <span class="keyword">in</span> a matured high-performance <span class="type">application</span> server <span class="keyword">is</span> less <span class="keyword">then</span> one <span class="keyword">in</span> a million.
@@ -357,102 +241,63 @@ It <span class="keyword">is</span> <span class="keyword">not</span> graceful <sp
 <p>I had searched books and informations about how to implemtnt a high-performance distributed system, but all searched are not good enough in Chinese. So, I decide to write one.</p>
 <p>This is the reason why I write this introduction.</p>
 </span>
-        
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/tags/distributed/" rel="tag">#distributed</a>
+          
+            <a href="/tags/flexibility/" rel="tag">#flexibility</a>
+          
+            <a href="/tags/performance/" rel="tag">#performance</a>
+          
+            <a href="/tags/server/" rel="tag">#server</a>
+          
+            <a href="/tags/service/" rel="tag">#service</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/07/25/High-Performance-High-Flexibility-Distributed-System-Introduction-2/" rel="prev">High-Performance & High-Flexibility Distributed System Introduction: 2</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/07/21/hello-world/" rel="next">Hello World</a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
-      
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/07/21/hello-world/" itemprop="url">
-                Hello World
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-07-21T16:35:11+08:00" content="2015-07-21">
-            2015-07-21
-          </time>
-        </span>
-
-        
-
-        
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-</span>
-        
+    <div class="post-spread">
       
     </div>
+  </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
 
             </div>
 
             
 
+            
+              <div class="comments" id="comments">
+                
+              </div>
             
         </div>
 
@@ -469,6 +314,15 @@ It <span class="keyword">is</span> <span class="keyword">not</span> graceful <sp
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table Of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
       
 
       <section class="site-overview">
@@ -531,6 +385,17 @@ It <span class="keyword">is</span> <span class="keyword">not</span> graceful <sp
       </section>
 
       
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Reason_for_the_Introduction"><span class="nav-number">1.</span> <span class="nav-text">Reason for the Introduction</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
 
     </div>
   </aside>
@@ -574,13 +439,13 @@ It <span class="keyword">is</span> <span class="keyword">not</span> graceful <sp
   
   
   
-  
-  
+    
+    
 
   
 
 
-
+  
   
   <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
   <script type="text/javascript" src="/js/fancy-box.js?v=0.4.4"></script>
@@ -599,6 +464,144 @@ It <span class="keyword">is</span> <span class="keyword">not</span> graceful <sp
   <script type="text/javascript" src="/js/search-toggle.js"></script>
 
 
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.4" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -611,15 +614,12 @@ It <span class="keyword">is</span> <span class="keyword">not</span> graceful <sp
 
 
 
-  
-  
-
-  
 
 
 
 
 
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55acfcb959350be8" async="async"></script>
 
 
 

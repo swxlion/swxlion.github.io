@@ -26,7 +26,7 @@
 
 
 
-  <meta name="keywords" content="swxlion,Hexo,next" />
+  <meta name="keywords" content="分布式,弹性,性能,服务,服务器," />
 
 
 
@@ -35,15 +35,31 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
 
 
-<meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="swxlion">
-<meta property="og:url" content="http://swxlion.github.io/zh-Hans/index.html">
+<meta name="description" content="前言这是一份写给新入者的参考，一份指南。
+这不是一份教材，它不能告诉你，如何一步一步，实现一个高性能服务，或者一个高性能服务器。他是一份参考，一份指南，它能告诉你，在你从一个新入者成长为一位分布式架构师，或者一位系统架构师的途中，会遇到什么问题，有哪些关键点，有哪些解决方法可以参考。
+按最初的想法，可能会依次谈及如下方面：
+
+什么是高性能，什么是高弹性
+技术的演化：从一片空白到网络库，从网络库到R">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高性能高弹性分布式系统浅说:2">
+<meta property="og:url" content="http://swxlion.github.io/zh-Hans/2015/07/25/高性能高弹性分布式系统浅说-2/index.html">
 <meta property="og:site_name" content="swxlion">
-<meta property="og:description">
+<meta property="og:description" content="前言这是一份写给新入者的参考，一份指南。
+这不是一份教材，它不能告诉你，如何一步一步，实现一个高性能服务，或者一个高性能服务器。他是一份参考，一份指南，它能告诉你，在你从一个新入者成长为一位分布式架构师，或者一位系统架构师的途中，会遇到什么问题，有哪些关键点，有哪些解决方法可以参考。
+按最初的想法，可能会依次谈及如下方面：
+
+什么是高性能，什么是高弹性
+技术的演化：从一片空白到网络库，从网络库到R">
+<meta property="og:updated_time" content="2015-07-26T06:32:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="swxlion">
-<meta name="twitter:description">
+<meta name="twitter:title" content="高性能高弹性分布式系统浅说:2">
+<meta name="twitter:description" content="前言这是一份写给新入者的参考，一份指南。
+这不是一份教材，它不能告诉你，如何一步一步，实现一个高性能服务，或者一个高性能服务器。他是一份参考，一份指南，它能告诉你，在你从一个新入者成长为一位分布式架构师，或者一位系统架构师的途中，会遇到什么问题，有哪些关键点，有哪些解决方法可以参考。
+按最初的想法，可能会依次谈及如下方面：
+
+什么是高性能，什么是高弹性
+技术的演化：从一片空白到网络库，从网络库到R">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -53,7 +69,7 @@
   };
 </script>
 
-    <title> swxlion </title>
+    <title> 高性能高弹性分布式系统浅说:2 // swxlion </title>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 <!--[if lte IE 8]>
@@ -69,9 +85,7 @@
 
 
 
-<div class="container one-column 
-   page-home 
-">
+<div class="container one-column page-post-detail">
     <div class="headband"></div>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
         <div class="header-inner"><h1 class="site-meta">
@@ -161,9 +175,9 @@
         <div class="main-inner">
             <div id="content" class="content">
                 
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
@@ -174,9 +188,7 @@
           
           
             
-              <a class="post-title-link" href="/zh-Hans/2015/07/25/高性能高弹性分布式系统浅说-2/" itemprop="url">
-                高性能高弹性分布式系统浅说:2
-              </a>
+              高性能高弹性分布式系统浅说:2
             
           
         </h1>
@@ -230,8 +242,7 @@
       
 
       
-        
-          <span itemprop="articleBody"><h1 id="前言"><center>前言</center></h1><p>这是一份写给新入者的参考，一份指南。</p>
+        <span itemprop="articleBody"><h1 id="前言"><center>前言</center></h1><p>这是一份写给新入者的参考，一份指南。</p>
 <p>这不是一份教材，它不能告诉你，如何一步一步，实现一个高性能服务，或者一个高性能服务器。他是一份参考，一份指南，它能告诉你，在你从一个新入者成长为一位分布式架构师，或者一位系统架构师的途中，会遇到什么问题，有哪些关键点，有哪些解决方法可以参考。</p>
 <p>按最初的想法，可能会依次谈及如下方面：</p>
 <ul>
@@ -264,210 +275,84 @@
 <li>最后，消除误区：关于算法、SQL调优 等没有说到的方面</li>
 </ul>
 </span>
-        
       
     </div>
 
     <footer class="post-footer">
       
-
+        <div class="post-tags">
+          
+            <a href="/zh-Hans/tags/分布式/" rel="tag">#分布式</a>
+          
+            <a href="/zh-Hans/tags/弹性/" rel="tag">#弹性</a>
+          
+            <a href="/zh-Hans/tags/性能/" rel="tag">#性能</a>
+          
+            <a href="/zh-Hans/tags/服务/" rel="tag">#服务</a>
+          
+            <a href="/zh-Hans/tags/服务器/" rel="tag">#服务器</a>
+          
+        </div>
       
 
       
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/zh-Hans/2015/07/25/高性能高弹性分布式系统浅说-1/" rel="next">高性能高弹性分布式系统浅说:1</a>
+            
+          </div>
+        </div>
       
-        <div class="post-eof"></div>
+
+      
       
     </footer>
   </article>
 
 
-    
+
+    <div class="post-spread">
       
+        <div class="ds-share flat" data-thread-key="2015/07/25/高性能高弹性分布式系统浅说-2/"
+     data-title="高性能高弹性分布式系统浅说:2"
+     data-content=""
+     data-url="http://swxlion.github.io/zh-Hans/2015/07/25/高性能高弹性分布式系统浅说-2/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/zh-Hans/2015/07/25/高性能高弹性分布式系统浅说-1/" itemprop="url">
-                高性能高弹性分布式系统浅说:1
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-25T00:53:32+08:00" content="2015-07-25">
-            2015-07-25
-          </time>
-        </span>
-
-        
-          <span class="post-category" >
-            &nbsp; | &nbsp; 分类于
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/zh-Hans/categories/架构设计/" itemprop="url" rel="index"><span itemprop="name">架构设计</span></a></span>
-
-              
-              
-                ， 
-              
-
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/zh-Hans/categories/架构设计/后端服务/" itemprop="url" rel="index"><span itemprop="name">后端服务</span></a></span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/zh-Hans/2015/07/25/高性能高弹性分布式系统浅说-1/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/25/高性能高弹性分布式系统浅说-1/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h1 id="写作缘由"><center>写作缘由</center></h1><p>原本是无意将我在高性能高弹性分布式系统领域里所遇的、所学的、所做的，整理、并记录下来的。下班的时间，不谈工作的事情。</p>
-<p>直到有一天，闲暇无聊，翻阅知乎，看到了不少如下的问答：</p>
-<pre><code>问：如何用epoll实现高并发服务器？
-答：一个成熟的高性能服务器，epoll相关的代码，不到万分之一。
-……。
-别以为epoll是“高性能服务器”的“关键技术”，他们只是一个API。
-……epoll不过是垃圾，……。
-不用提IOCP了，proactor会来强奸你的代码结构，……，不像reactor那样优雅……。
-</code></pre><p>回答的没错，事实也大抵如此。</p>
-<p><strong>但是</strong>，很明显，看问题就知道，问者只是一位好奇，但在高性能服务领域什么都不懂的新人。</p>
-<p>问题的回答，大抵没错，但是，对一个新人而言，空洞教条。什么是Reactor？什么是Proactor？我不相信一个会提出这样问题的新人能知道以上两个概念。更重要的是，这最高票的回答，充满了语言暴力！<br>这就好比，学生向老师虚心请教，老师抄起木棍当头一棒：“还学吗？”<br>学生：“学！”<br>老师又是一棒，再问：“还学吗？”<br>学生：“……”</p>
-<p>这不是我的理念。<br>我的理念是：对于新人，要循循诱导，提起他们的兴趣，而不是吓喝他们，让他们“知难而退”。</p>
-<p>也有人曾对我说过：“教会了徒弟，饿死了师傅。”<br>我不担心，现在足够好的系统架构师／分布式架构师实在太少，那些“大牛”们的“杰作”是在一看一个不入眼。</p>
-<p>所以，我决定写下我的知识，我的经验。<br>这是我在该领域的所遇、所学、所知、所做。</p>
-</span>
-        
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
       
     </div>
+  </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/zh-Hans/2015/07/21/hello-world/" itemprop="url">
-                Hello World
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于
-          <time itemprop="dateCreated" datetime="2015-07-21T16:35:11+08:00" content="2015-07-21">
-            2015-07-21
-          </time>
-        </span>
-
-        
-
-        
-          
-            <span class="post-comments-count">
-              &nbsp; | &nbsp;
-              <a href="/zh-Hans/2015/07/21/hello-world/#comments" itemprop="discussionUrl">
-                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/21/hello-world/" itemprop="commentsCount"></span>
-              </a>
-            </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-</span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
 
             </div>
 
             
 
+            
+              <div class="comments" id="comments">
+                
+                  <div class="ds-thread" data-thread-key="2015/07/25/高性能高弹性分布式系统浅说-2/"
+                       data-title="高性能高弹性分布式系统浅说:2" data-url="http://swxlion.github.io/zh-Hans/2015/07/25/高性能高弹性分布式系统浅说-2/">
+                  </div>
+                
+              </div>
             
         </div>
 
@@ -484,6 +369,15 @@
   <aside id="sidebar" class="sidebar">
     <div class="sidebar-inner">
 
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
       
 
       <section class="site-overview">
@@ -546,6 +440,17 @@
       </section>
 
       
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
 
     </div>
   </aside>
@@ -589,7 +494,7 @@
   
   
   
-  
+    
 
   
     
@@ -607,8 +512,8 @@
     })();
   </script>
 
+    
   
-
   
   <script type="text/javascript" src="/zh-Hans/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
   <script type="text/javascript" src="/zh-Hans/js/fancy-box.js?v=0.4.4"></script>
@@ -627,6 +532,144 @@
   <script type="text/javascript" src="/zh-Hans/js/search-toggle.js"></script>
 
 
+  
+<script type="text/javascript" src="/zh-Hans/js/bootstrap.scrollspy.js?v=0.4.4" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -638,26 +681,6 @@
 
 
 
-
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"swxlion"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
 
 
 
