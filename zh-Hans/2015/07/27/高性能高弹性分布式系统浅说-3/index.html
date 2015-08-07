@@ -1,0 +1,680 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+    
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/zh-Hans/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/zh-Hans/css/main.css?v=0.4.4"/>
+
+
+
+
+  <meta name="keywords" content="分布式,弹性,性能,服务,服务器," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
+
+
+<meta name="description" content="什么是高性能？什么是高弹性？什么是高性能？什么是高性能？网上有各种各样的标准和评测，除了提到最多的高TPS或者高QPS外，还有不少提到了：高传输速率、低资源消耗、快速响应，等等。但什么才是高性能的准确定义？
+高性能，至今未见一个清晰明确，大家都可以接受的定义。所以在展开后续话题之前，我们有必要先来明确一下，我们应该选用什么样的定义。
+首先，除了极个别特殊情况外，设计得好的集群，都可以通过增加机器，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高性能高弹性分布式系统浅说:3">
+<meta property="og:url" content="http://swxlion.github.io/zh-Hans/2015/07/27/高性能高弹性分布式系统浅说-3/index.html">
+<meta property="og:site_name" content="swxlion">
+<meta property="og:description" content="什么是高性能？什么是高弹性？什么是高性能？什么是高性能？网上有各种各样的标准和评测，除了提到最多的高TPS或者高QPS外，还有不少提到了：高传输速率、低资源消耗、快速响应，等等。但什么才是高性能的准确定义？
+高性能，至今未见一个清晰明确，大家都可以接受的定义。所以在展开后续话题之前，我们有必要先来明确一下，我们应该选用什么样的定义。
+首先，除了极个别特殊情况外，设计得好的集群，都可以通过增加机器，">
+<meta property="og:updated_time" content="2015-07-30T14:02:54.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="高性能高弹性分布式系统浅说:3">
+<meta name="twitter:description" content="什么是高性能？什么是高弹性？什么是高性能？什么是高性能？网上有各种各样的标准和评测，除了提到最多的高TPS或者高QPS外，还有不少提到了：高传输速率、低资源消耗、快速响应，等等。但什么才是高性能的准确定义？
+高性能，至今未见一个清晰明确，大家都可以接受的定义。所以在展开后续话题之前，我们有必要先来明确一下，我们应该选用什么样的定义。
+首先，除了极个别特殊情况外，设计得好的集群，都可以通过增加机器，">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+    <title> 高性能高弹性分布式系统浅说:3 // swxlion </title>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+
+
+
+<div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/zh-Hans/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">swxlion</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/zh-Hans/" rel="section">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/zh-Hans/categories" rel="section">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/zh-Hans/tags" rel="section">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/zh-Hans/archives" rel="section">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/zh-Hans/about" rel="section">
+            <i class="menu-item-icon icon-about"></i> <br />
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-english">
+          <a href="/zh-Hans/../" rel="section">
+            <i class="menu-item-icon icon-english"></i> <br />
+            英文版
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <div class="main-inner">
+            <div id="content" class="content">
+                
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              高性能高弹性分布式系统浅说:3
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-27T11:52:26+08:00" content="2015-07-27">
+            2015-07-27
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/zh-Hans/categories/架构设计/" itemprop="url" rel="index"><span itemprop="name">架构设计</span></a></span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/zh-Hans/categories/架构设计/后端服务/" itemprop="url" rel="index"><span itemprop="name">后端服务</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/zh-Hans/2015/07/27/高性能高弹性分布式系统浅说-3/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/27/高性能高弹性分布式系统浅说-3/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h1 id="什么是高性能？什么是高弹性？"><center>什么是高性能？什么是高弹性？</center></h1><h5 id="什么是高性能？">什么是高性能？</h5><p>什么是高性能？网上有各种各样的标准和评测，除了提到最多的高TPS或者高QPS外，还有不少提到了：高传输速率、低资源消耗、快速响应，等等。但什么才是高性能的准确定义？</p>
+<p>高性能，至今未见一个清晰明确，大家都可以接受的定义。所以在展开后续话题之前，我们有必要先来明确一下，我们应该选用什么样的定义。</p>
+<p>首先，除了极个别特殊情况外，设计得好的集群，都可以通过增加机器，增进集群整体的性能。因此，除特殊情况外，在本文中，性能默认指的是单机的性能。</p>
+<p>其次，关于各项经常被提及的指标：<br><strong>TPS/QPS</strong>：作为服务处理能力的直接体现，TPS或者QPS，应该被作为高性能标准的核心。一般部署情况下，集群各节点要不处于同一内网，要不集群的子集群个节点会处于同一内网，因此我们忽略TPS和QPS的差异，在本文中，一律使用QPS代指。</p>
+<p><strong>高传输速率</strong>：要写一个程序将网卡跑满其实很简单。同时下载几十个电影和高频率地处理几十万个实时计算的请求，他们的传输速率可能相差无几。除了对网卡和带宽的利用率之外，在性能方面，基本毫无意义。</p>
+<p><strong>低资源消耗</strong>：虽然更低的资源消耗意味着可以同时提供更多的服务，但服务器不是拿来闲置的，闲置是要花钱的。我们想知道的是60%负荷，80%负荷，90%负荷，100%负荷的性能曲线。所以单纯的低资源消耗，意义不大。</p>
+<p><strong>快速响应</strong>：这是一个重要的指标。一般可能还会关心，10%负荷时的响应速度，50%负荷时的响应速度，60％， 75%， 80%， 90%， 100% 等各负荷阶段的响应速度。</p>
+<p><strong>高并发</strong>：对于某些服务来说，这也是一个重要的指标。但要记住，一台机器有几个Core，真并发就最多同时有几个。一般来说，还是QPS更具代表性。</p>
+<p><strong>海量链接</strong>：对于某些服务，比如网关，消息推送等，可能非常重要。但对其他服务而言，一个集群内可能也就几百到几千台机器。所以，我们只会在必要时，才会采用该指标。</p>
+<p>于是，在此决定使用QPS作为高性能的主要指标，根据情况，辅以响应速度，和最大链接数目。</p>
+<h5 id="什么是高弹性？">什么是高弹性？</h5><p>什么是高弹性？“可自由扩展？”“按需增减？”相对于高性能，网上的描述更加的笼统。<br>本文讲述的是高性能高弹性分布式系统，因此，本文对弹性的定义将围绕系统和集群的架构来定义。<br>本文在此将高弹性定义为：可在异构环境中自由扩展，按需增减，可根据需要改变集群的方式。且在因动态容灾导致的主从切换时，和因网络链路导致的集群分裂和合并时，无需人工干预，自动完成。</p>
+<h5 id="如何评测？如何对比？">如何评测？如何对比？</h5><p>最后，如何评测？如何对比？基于QPS与负载的关系曲线，和响应时间与负载的关系曲线，这些自然没有问题。但因为本文还会涉及到网络库和RPC框架，于是需要再补充一点：<br><strong>任何非自己实测的对比，特别是相关利益方的评测，都是需要质疑的。</strong><br>因为很多细节影响了评测的结果，比如测试使用的方式，配置项的优化程度，等等。<br>所以，最好找一个确定的业务，用需要对比的框架，各写一份。然后放在同一台机器上，在相同的环境中，分别运行，然后对比结果。<br>当然，对框架的评测，除了性能外，还有几个重要的指标：</p>
+<ul>
+<li>框架的难易程度</li>
+<li>框架的开发效率</li>
+<li>框架的灵活性</li>
+<li>框架支持的功能和特性</li>
+</ul>
+<p>这也就是为什么我们不建议使用ACE，且先后弃用 ICE 和 Facebook Thrift，改用自研框架的原因。</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/zh-Hans/tags/分布式/" rel="tag">#分布式</a>
+          
+            <a href="/zh-Hans/tags/弹性/" rel="tag">#弹性</a>
+          
+            <a href="/zh-Hans/tags/性能/" rel="tag">#性能</a>
+          
+            <a href="/zh-Hans/tags/服务/" rel="tag">#服务</a>
+          
+            <a href="/zh-Hans/tags/服务器/" rel="tag">#服务器</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/zh-Hans/2015/08/03/高性能高弹性分布式系统浅说-4/" rel="prev">高性能高弹性分布式系统浅说:4</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/zh-Hans/2015/07/25/高性能高弹性分布式系统浅说-2/" rel="next">高性能高弹性分布式系统浅说:2</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2015/07/27/高性能高弹性分布式系统浅说-3/"
+     data-title="高性能高弹性分布式系统浅说:3"
+     data-content=""
+     data-url="http://swxlion.github.io/zh-Hans/2015/07/27/高性能高弹性分布式系统浅说-3/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+
+            </div>
+
+            
+
+            
+              <div class="comments" id="comments">
+                
+                  <div class="ds-thread" data-thread-key="2015/07/27/高性能高弹性分布式系统浅说-3/"
+                       data-title="高性能高弹性分布式系统浅说:3" data-url="http://swxlion.github.io/zh-Hans/2015/07/27/高性能高弹性分布式系统浅说-3/">
+                  </div>
+                
+              </div>
+            
+        </div>
+
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/avatar-120.png" alt="swxlion" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">swxlion</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/zh-Hans/archives">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/zh-Hans/categories">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">分类</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/zh-Hans/tags">
+              <span class="site-state-item-count">8</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/swxlion" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/swxlion" target="_blank">微博</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/swxlion" target="_blank">知乎</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是高性能？什么是高弹性？"><span class="nav-number">1.</span> <span class="nav-text">什么是高性能？什么是高弹性？</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是高性能？"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">什么是高性能？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是高弹性？"><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">什么是高弹性？</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如何评测？如何对比？"><span class="nav-number">1.0.0.0.3.</span> <span class="nav-text">如何评测？如何对比？</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">swxlion</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+        </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+</div>
+
+<script type="text/javascript" src="/zh-Hans/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"swxlion"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+    
+  
+  
+  <script type="text/javascript" src="/zh-Hans/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/zh-Hans/js/fancy-box.js?v=0.4.4"></script>
+
+
+  <script type="text/javascript" src="/zh-Hans/js/helpers.js?v=0.4.4"></script>
+  
+
+  <script type="text/javascript" src="/zh-Hans/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/zh-Hans/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/zh-Hans/js/motion_global.js?v=0.4.4" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/zh-Hans/js/search-toggle.js"></script>
+
+
+  
+<script type="text/javascript" src="/zh-Hans/js/bootstrap.scrollspy.js?v=0.4.4" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (CONFIG.sidebar === 'always') {
+            displaySidebar();
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+<!-- lazyload -->
+<script type="text/javascript" src="/zh-Hans/js/lazyload.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery("#posts img").lazyload({
+            placeholder: "/zh-Hans/images/loading.gif",
+            effect: "fadeIn"
+        });
+    });
+</script>
+</body>
+</html>

@@ -176,6 +176,206 @@
           
           
             
+              <a class="post-title-link" href="/2015/08/06/High-Performance-High-Flexibility-Distributed-System-Introduction-4/" itemprop="url">
+                High-Performance & High-Flexibility Distributed System Introduction: 4
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2015-08-06T22:08:05+08:00" content="2015-08-06">
+            2015-08-06
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/architecture-design/" itemprop="url" rel="index"><span itemprop="name">architecture design</span></a></span>
+
+              
+              
+                , 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/architecture-design/backend-services/" itemprop="url" rel="index"><span itemprop="name">backend services</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h1 id="The_Evolution_of_Technology:_from_Nothing_to_Network_Library,_from_Network_Library_to_RPC_Framework,_from_RPC_Framework_to_Ecosystem"><center>The Evolution of Technology: from Nothing to Network Library, from Network Library to RPC Framework, from RPC Framework to Ecosystem</center></h1><p>At the beginning of all, no resource can be used, no codes can be used. All services and all servers must be developed from BSD socket interfaces.<br>Too many projects undergone, too many codes written, developers found many codes had the similar forms. So, these froms were integrated into a functions collection, and the first network library was born. After decades of evolution,<br>many famous network libraries are emerged, such as libevent.</p>
+<p>So, our developers put into developing with multifarious network libraries, one after another.<br>After experienced more large-scale projects and more complex environments, developers found many large-scale projects need network as the communication medium. A munber of different devices and programming languages exist at the both ends of communication. After classified these devices and programming languages, developer found the categories of referred devices and languages are in small amounts. And most usages of network and communication on these devices with these languages are very similar.<br>So, the RPC framework is appeared.</p>
+<p>The first well known RPC framework is ACE framework. ICE, ApackeThrift/Facebook Thrift, Cobra are other familiar RPC frameworks.</p>
+<p>Then, …</p>
+<p>It seems that the evolution is stopped …</p>
+<p>In my career more than ten years, I saw too many kinds of development ways.<br>Some companies don’t use any network library, developing base on BSD socket interfaces; some companies develop new projects base on copying and modifying old projects, strip old business logic and put new transactions’ logics; some companies use network libraries; and some companies use RPC framework.</p>
+<p>The way more in front will spend more development costs, more development periods, and less stable qualities.</p>
+<p>I know a top famous Internet corporation, takes the second way to develop its network services.<br>And, there is an idiosyncratic way that is very popular and very success: take many incompatible open source projects and use glue language to assemble them into a distributed system.<br>Many startups and Internet corporations take the glue mode. This way only needs very low costs, and takes effect very quickly. No top experts are needed, no senior architecture or system design capabilities are needs. Only require using open source projects and writing glue codes. Performance and flexibility just depend on open source projects.</p>
+<p>This way is very successed in business.<br>But in technology?<br>Is it the next step of technology evolution?</p>
+<p>NO!</p>
+<p>Glue mode expedites development efficiency, but does not reduce the complexity of developing a complex system or upgrade system performance or ensure system efficiency. It just assembles other components rather than generates an integral solution.</p>
+<p>Until one day, a project appeared.</p>
+<p>It is <strong>Hadoop</strong>!</p>
+<p>Hadoop drives the development of related modules and projects. Such as HDFS, HBase, Hive, Avro, Zookeeper, and so on.<br>With the relevant modules and projects constantly appeared and improved, they gradually constitute a technology ecosystem.</p>
+<p>They are seamless integrated with each other, coordinated with each other, and supported with each other. The technology ecosystem not only ensure compatibility and uniformity, but also unify programming language, reduce the learn costs and developing complexity, improve productivity and project’s qualities. They also reduce development periods and costs.</p>
+<p>If a project using Hadoop, it must use HDFS, and probably use Hive, Zookeeper or other components in this ecosystem in future. Exterior components are not a good and compatible choice.</p>
+<p>This is the next step from RPC framweork, an intact technology ecocystem.</p>
+<p>But relative to Java, I am more familiar with C++.<br>And Hadoop ecocystem focuses on big data rather than entire network services.</p>
+<p>So, the following content will not talk about the Hadoop ecocystem. I will tell you another story, according to my experiences, about the components of a network services technology ecosystem, how to design a high-performance &amp; high-flexibility distributed framework, and how to design the architecture and clusters for various business.</p>
+<p>Default using C++ language.</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/07/30/High-Performance-High-Flexibility-Distributed-System-Introduction-3/" itemprop="url">
+                High-Performance & High-Flexibility Distributed System Introduction: 3
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2015-07-30T11:51:17+08:00" content="2015-07-30">
+            2015-07-30
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/architecture-design/" itemprop="url" rel="index"><span itemprop="name">architecture design</span></a></span>
+
+              
+              
+                , 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/architecture-design/backend-services/" itemprop="url" rel="index"><span itemprop="name">backend services</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h1 id="What_is_the_high-performance?_And_what_is_the_high-flexibility?"><center>What is the high-performance? And what is the high-flexibility?</center></h1><h3 id="What_is_the_high-performance?">What is the high-performance?</h3><p>What is the high-performance? Variable standards and evaluating can be found in the network. Apart from high TPS and high QPS, high transmission speed, low resources consumption, quick response and others are referred. But, what is the exact definition?</p>
+<p>Currently, we cannot found a distinct definition for the concept of high-performance. So, we need clear and definite the concept for further topics.</p>
+<p>Firstly, for a good designed cluster, the performance of whole cluster can be raised by appending more machines in most cases. For this reason, except for special cases, we think the performance means the performance on a single machine.</p>
+<p>Secondly, for each referred indicators:</p>
+<p><strong>TPS/QPS</strong><br>As the straightforward expression for performance and capability, TPS and QPS ought to be treated as the core indicator for high-performance. Because all machines of a cluster usually in the same subnet, or all machines of a certain sub-cluster for a super-cluster usually in the same subnet, we ignore the difference between TPS and QPS, and using QPS instead of.</p>
+<p><strong>High Transmission Speed</strong><br>Writing a program to drain bandwidth is very easy. Downloading dozens of movies of processing hundreds of thousands of real-time tasks in high frequency will take the same transmission rate. So, high transmission speed is worthless except for the utilizations of network card and bandwidth.</p>
+<p><strong>Low Resources Consumption</strong><br>Lower resources consumption means more services can be provided, but we don’t want the servers lying idle. Idling machines and low utilizations waste of money. We want to know the performance curve when the machines’ load in 60%, 80%, 90% and 100%. So, pure low resources consumption is lacking value.</p>
+<p><strong>Quick Response</strong><br>This is important indicator, but we want to know more. For example, the response speed when macthine’s load in 10%, 50%, 60%, 75%, 80%, 90 and 100%.</p>
+<p><strong>High Concurrency</strong><br>This also is an important indicator for some services. But, please remember, the actual concurrency is depended on the count of cores. In general, QPS is more representatives.</p>
+<p><strong>Mass Connections</strong><br>This is impoerant for some services, such as gate and message pushing. But for the rest of services, they don’t need holding so much connections. So, we only use this indicator when necessary.</p>
+<p>Consequently, I choose the QPS as the main indicator, and using response speed and mass connections if necessary.</p>
+<h3 id="What_is_the_high-flexibility?">What is the high-flexibility?</h3><p>What is the high-flexibility? Free extending? Increase or decrease machines according to the needs? Relative to the high-performance, the description for the high-flexibility found in the network is vague.<br>Because the topic of this introduction is high-performance and high-flexibility distributed system, the concept of flexibility in this article will focus on architecture of systems and clusters.<br>This article uses the description as definition of high-flexibility: A capability that let the system can be free extended, increase or decrease machines or nodes according to the system’s needs in heterogeneous environment, and the cluster mode can be changed easily if necessary. And whether master-slave switching or clusters splitting/merging caused by network state, all can be completed automatically without manual intervention.</p>
+<h3 id="How_to_evaluate?_How_to_compare?">How to evaluate? How to compare?</h3><p>The last, how to evaluate? How to compare? Base on the QPS/loading curve or response-rate/loading curve both are good choices. Since for the article will refer network library and RPC framework, please note:<br><strong>All evaluations and comparisons are need to be questioned if these evaluations or comparisons are not done by youself.</strong><br>Too many things can affect the result, such as the evaluating ways, configurations optimization, and so on.<br>The best way is developing a series of workable servers for each frameworks which will be compared with a certain transaction, and running successively on the same machine with the same environment. Then, compare the results.<br>Except for performance, for framework evaluating, there are some important indicators:</p>
+<ul>
+<li>Is framework ease to learn and use?</li>
+<li>How about the productivity of framework?</li>
+<li>How about the flexibility of framework?</li>
+<li>Which functions and features are supported?</li>
+</ul>
+<p>This is why I don’t recommend ACE, and our companies discard ICE and Facebook Thrift, use the framework developed by ourself to instead of.</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/07/25/High-Performance-High-Flexibility-Distributed-System-Introduction-2/" itemprop="url">
                 High-Performance & High-Flexibility Distributed System Introduction: 2
               </a>
@@ -231,13 +431,13 @@
 <p>According to the original idea, this introduction will involve the following aspects:</p>
 <ul>
 <li>What is the high-performance? And what is the high-flexibility?</li>
-<li>Technology Evolvement: from nothing to network library, from network library to RPC framework, from RPC framework to services ecological environment.</li>
-<li>The components of services ecological environment.</li>
+<li>Technology Evolvement: from nothing to network library, from network library to RPC framework, from RPC framework to services ecosystem</li>
+<li>The Components of Services Ecosystem</li>
 <li>Network Engine Design</li>
 <li>Network Library Design</li>
 <li>RPC Framework Design</li>
-<li>Services Ecological Environment Design</li>
-<li>New Agile Way: super fast development &amp; rules, base on services ecological environment.</li>
+<li>Services Ecosystem Design</li>
+<li>New Agile Way: super fast development &amp; rules, base on services ecosystem</li>
 <li>The performance &amp; capability of current projects</li>
 <li>The kinds of cluster</li>
 <li>Cluster Management Design</li>
@@ -480,7 +680,7 @@ It <span class="keyword">is</span> <span class="keyword">not</span> graceful <sp
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -494,7 +694,7 @@ It <span class="keyword">is</span> <span class="keyword">not</span> graceful <sp
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">10</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>

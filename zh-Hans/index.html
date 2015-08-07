@@ -174,6 +174,218 @@
           
           
             
+              <a class="post-title-link" href="/zh-Hans/2015/08/03/高性能高弹性分布式系统浅说-4/" itemprop="url">
+                高性能高弹性分布式系统浅说:4
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-08-03T22:08:30+08:00" content="2015-08-03">
+            2015-08-03
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/zh-Hans/categories/架构设计/" itemprop="url" rel="index"><span itemprop="name">架构设计</span></a></span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/zh-Hans/categories/架构设计/后端服务/" itemprop="url" rel="index"><span itemprop="name">后端服务</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/zh-Hans/2015/08/03/高性能高弹性分布式系统浅说-4/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/08/03/高性能高弹性分布式系统浅说-4/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h1 id="技术的演化：从一片空白到网络库，从网络库到RPC框架，再从RPC框架到生态系统"><center>技术的演化：从一片空白到网络库，从网络库到RPC框架，再从RPC框架到生态系统</center></h1><p>洪荒时代，没有任何可以利用的资源，代码。一切的服务，都需要开发人员亲自从socket()、bind()、accept()等函数一个一个写起。<br>经历的项目多了，写的代码多了，大家发现，网络相关的代码，有着类似的使用方式。那干嘛不集中到一起，写成一个库，供大家使用？于是最初的网络库就诞生了。经过数十年的演化，最后以 libevent 作为一个代表。<br>于是我们的开发者，携带着网络库，又投入了一个又一个的项目，一次又一次的开发。<br>在经历了更大规模的项目，更复杂的环境后，开发者发现，很多规模稍大的项目，需要网络作为中间通讯的媒介。但通讯的两端，存在着不同的设备，不同的开发语言。在对设备、语言整理分类之后，开发者发现，常见的设备、语言，并没有太多的种类。而且在这些同类的设备上、同类的语言中，对网络通讯的使用，又有着惊人的相似。<br>于是，在经历了一段时间的思考后，RPC框架诞生了。<br>我们所知道的开山鼻祖就是大名鼎鼎的 ACE。其他常见的还有 ICE、Apache Thrift/Facebook Thrift、Cobra 等。</p>
+<p>然后，……</p>
+<p>似乎，一切到了这里，就静止了……</p>
+<p>在从业的十多年里，见过了太多各式各样的开发方式。<br>有不用网络库，直接从 BSD Socket 开始编写的；有规整规整以前项目代码，剥离原有业务代码后，边改边写的；有使用网络库，基于网络库进一步开发的；还有使用RPC框架进行开发的。</p>
+<p>越靠前的开发方式，开发成本越高，开发周期也越长，质量也越不稳定。</p>
+<p>但是，不要嘲笑，我的确遇到过，某非常著名的互联网公司，居然采用了第二种方式，进行开发。<br>当然，还有一种很奇葩，但也非常流行，且很成功的方式：一堆互不兼容的开源项目，加上一堆的胶水代码，强行粘合成了一套分布式系统。<br>很多创业型公司，和互联网公司，都采用的是胶水模式。毕竟成本低，见效快。不需要顶级的牛人，不需要多深的架构和系统设计功底。会用开源软件，会用胶水语言写胶水代码就行。性能，就是开源软件的性能；弹性，就是开源软件架构的弹性。</p>
+<p>胶水模式是商业上非常成功的模式。</p>
+<p>但技术上？<br>这是啥？</p>
+<p>它是RPC框架开发演进的下一步？<br>显然不是！</p>
+<p>胶水模式加快了系统整体的开发效率，但没有降低复杂系统的开发复杂度，也没有明显的提升或者保证系统整体的性能和运行效率。它只是借用了其他的模块，而没有自成一体。</p>
+<p>直到有一天，一个项目破空而出。</p>
+<p>它就是 Hadoop！</p>
+<p>它带动了关联模块的开发，比如 HDFS、HBase、Hive、Avro、Zookeeper 等等。<br>随着相关模块的不断丰富和完善，它们便形成了一个开发的技术生态系统。</p>
+<p>他们之间无缝集成，相互配合，相互支撑。不仅保证了兼容性和一致性，还统一了技术语言，降低了学习成本，降低了开发复杂度，大大提升了开发效率，和项目质量。且还缩短了项目开发周期，大大降低了开发成本。</p>
+<p>项目用了Hadoop，就必然会用HDFS。如果有对应的需要，也必然会上 Hive、Zookeeper 等等。不用考虑，没有更好更融洽的选择。</p>
+<p>这才是RPC框架进化的下一步：完整的技术生态系统。</p>
+<p>不过相对Java，我更熟悉C++。<br>而且，Hadoop 及其技术生态系统相比网络服务，更加侧重于大数据处理。</p>
+<p>所以，后文并不会谈及 Hadoop 及其技术生态系统，而是根据作者的项目亲历，讲述技术生态系统的组成，和如何设计高性能高弹性的分布式框架，以及如何设计不同业务类型的集群架构。</p>
+<p>当然，默认语言是C++。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/zh-Hans/2015/07/27/高性能高弹性分布式系统浅说-3/" itemprop="url">
+                高性能高弹性分布式系统浅说:3
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于
+          <time itemprop="dateCreated" datetime="2015-07-27T11:52:26+08:00" content="2015-07-27">
+            2015-07-27
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; 分类于
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/zh-Hans/categories/架构设计/" itemprop="url" rel="index"><span itemprop="name">架构设计</span></a></span>
+
+              
+              
+                ， 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/zh-Hans/categories/架构设计/后端服务/" itemprop="url" rel="index"><span itemprop="name">后端服务</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+              &nbsp; | &nbsp;
+              <a href="/zh-Hans/2015/07/27/高性能高弹性分布式系统浅说-3/#comments" itemprop="discussionUrl">
+                <span class="post-comments-count ds-thread-count" data-thread-key="2015/07/27/高性能高弹性分布式系统浅说-3/" itemprop="commentsCount"></span>
+              </a>
+            </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h1 id="什么是高性能？什么是高弹性？"><center>什么是高性能？什么是高弹性？</center></h1><h5 id="什么是高性能？">什么是高性能？</h5><p>什么是高性能？网上有各种各样的标准和评测，除了提到最多的高TPS或者高QPS外，还有不少提到了：高传输速率、低资源消耗、快速响应，等等。但什么才是高性能的准确定义？</p>
+<p>高性能，至今未见一个清晰明确，大家都可以接受的定义。所以在展开后续话题之前，我们有必要先来明确一下，我们应该选用什么样的定义。</p>
+<p>首先，除了极个别特殊情况外，设计得好的集群，都可以通过增加机器，增进集群整体的性能。因此，除特殊情况外，在本文中，性能默认指的是单机的性能。</p>
+<p>其次，关于各项经常被提及的指标：<br><strong>TPS/QPS</strong>：作为服务处理能力的直接体现，TPS或者QPS，应该被作为高性能标准的核心。一般部署情况下，集群各节点要不处于同一内网，要不集群的子集群个节点会处于同一内网，因此我们忽略TPS和QPS的差异，在本文中，一律使用QPS代指。</p>
+<p><strong>高传输速率</strong>：要写一个程序将网卡跑满其实很简单。同时下载几十个电影和高频率地处理几十万个实时计算的请求，他们的传输速率可能相差无几。除了对网卡和带宽的利用率之外，在性能方面，基本毫无意义。</p>
+<p><strong>低资源消耗</strong>：虽然更低的资源消耗意味着可以同时提供更多的服务，但服务器不是拿来闲置的，闲置是要花钱的。我们想知道的是60%负荷，80%负荷，90%负荷，100%负荷的性能曲线。所以单纯的低资源消耗，意义不大。</p>
+<p><strong>快速响应</strong>：这是一个重要的指标。一般可能还会关心，10%负荷时的响应速度，50%负荷时的响应速度，60％， 75%， 80%， 90%， 100% 等各负荷阶段的响应速度。</p>
+<p><strong>高并发</strong>：对于某些服务来说，这也是一个重要的指标。但要记住，一台机器有几个Core，真并发就最多同时有几个。一般来说，还是QPS更具代表性。</p>
+<p><strong>海量链接</strong>：对于某些服务，比如网关，消息推送等，可能非常重要。但对其他服务而言，一个集群内可能也就几百到几千台机器。所以，我们只会在必要时，才会采用该指标。</p>
+<p>于是，在此决定使用QPS作为高性能的主要指标，根据情况，辅以响应速度，和最大链接数目。</p>
+<h5 id="什么是高弹性？">什么是高弹性？</h5><p>什么是高弹性？“可自由扩展？”“按需增减？”相对于高性能，网上的描述更加的笼统。<br>本文讲述的是高性能高弹性分布式系统，因此，本文对弹性的定义将围绕系统和集群的架构来定义。<br>本文在此将高弹性定义为：可在异构环境中自由扩展，按需增减，可根据需要改变集群的方式。且在因动态容灾导致的主从切换时，和因网络链路导致的集群分裂和合并时，无需人工干预，自动完成。</p>
+<h5 id="如何评测？如何对比？">如何评测？如何对比？</h5><p>最后，如何评测？如何对比？基于QPS与负载的关系曲线，和响应时间与负载的关系曲线，这些自然没有问题。但因为本文还会涉及到网络库和RPC框架，于是需要再补充一点：<br><strong>任何非自己实测的对比，特别是相关利益方的评测，都是需要质疑的。</strong><br>因为很多细节影响了评测的结果，比如测试使用的方式，配置项的优化程度，等等。<br>所以，最好找一个确定的业务，用需要对比的框架，各写一份。然后放在同一台机器上，在相同的环境中，分别运行，然后对比结果。<br>当然，对框架的评测，除了性能外，还有几个重要的指标：</p>
+<ul>
+<li>框架的难易程度</li>
+<li>框架的开发效率</li>
+<li>框架的灵活性</li>
+<li>框架支持的功能和特性</li>
+</ul>
+<p>这也就是为什么我们不建议使用ACE，且先后弃用 ICE 和 Facebook Thrift，改用自研框架的原因。</p>
+</span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/zh-Hans/2015/07/25/高性能高弹性分布式系统浅说-2/" itemprop="url">
                 高性能高弹性分布式系统浅说:2
               </a>
@@ -236,13 +448,13 @@
 <p>按最初的想法，可能会依次谈及如下方面：</p>
 <ul>
 <li>什么是高性能，什么是高弹性</li>
-<li>技术的演化：从一片空白到网络库，从网络库到RPC框架，再从RPC框架到生态环境</li>
-<li>生态环境的组成</li>
+<li>技术的演化：从一片空白到网络库，从网络库到RPC框架，再从RPC框架到生态系统</li>
+<li>生态系统的组成</li>
 <li>网络引擎的设计</li>
 <li>网络库的设计</li>
 <li>RPC框架的设计</li>
-<li>生态环境的设计</li>
-<li>新的敏捷：基于生态环境的超快速开发，和开发准则</li>
+<li>生态系统的设计</li>
+<li>新的敏捷：基于生态系统的超快速开发，和开发准则</li>
 <li>所经历项目的水准和情况</li>
 <li>集群的种类</li>
 <li>集群管理</li>
@@ -495,7 +707,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/zh-Hans/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">5</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -509,7 +721,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/zh-Hans/tags">
-              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>

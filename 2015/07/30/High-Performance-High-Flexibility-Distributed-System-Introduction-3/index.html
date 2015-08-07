@@ -1,0 +1,639 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+    
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+  <link href='//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.4"/>
+
+
+
+
+  <meta name="keywords" content="distributed,flexibility,performance,server,service," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.4" />
+
+
+<meta name="description" content="What is the high-performance? And what is the high-flexibility?What is the high-performance?What is the high-performance? Variable standards and evaluating can be found in the network. Apart from high">
+<meta property="og:type" content="article">
+<meta property="og:title" content="High-Performance & High-Flexibility Distributed System Introduction: 3">
+<meta property="og:url" content="http://swxlion.github.io/2015/07/30/High-Performance-High-Flexibility-Distributed-System-Introduction-3/index.html">
+<meta property="og:site_name" content="swxlion">
+<meta property="og:description" content="What is the high-performance? And what is the high-flexibility?What is the high-performance?What is the high-performance? Variable standards and evaluating can be found in the network. Apart from high">
+<meta property="og:updated_time" content="2015-08-06T11:17:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="High-Performance & High-Flexibility Distributed System Introduction: 3">
+<meta name="twitter:description" content="What is the high-performance? And what is the high-flexibility?What is the high-performance?What is the high-performance? Variable standards and evaluating can be found in the network. Apart from high">
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    sidebar: 'post'
+  };
+</script>
+
+    <title> High-Performance & High-Flexibility Distributed System Introduction: 3 // swxlion </title>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+<!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+
+
+
+<div class="container one-column page-post-detail">
+    <div class="headband"></div>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand" rel="start">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">swxlion</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu ">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon icon-home"></i> <br />
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            <i class="menu-item-icon icon-categories"></i> <br />
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            <i class="menu-item-icon icon-about"></i> <br />
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-chinese">
+          <a href="/zh-Hans" rel="section">
+            <i class="menu-item-icon icon-chinese"></i> <br />
+            Chinese
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+        </div>
+    </header>
+
+    <main id="main" class="main">
+        <div class="main-inner">
+            <div id="content" class="content">
+                
+
+  <div id="posts" class="posts-expand">
+    
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              High-Performance & High-Flexibility Distributed System Introduction: 3
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2015-07-30T11:51:17+08:00" content="2015-07-30">
+            2015-07-30
+          </time>
+        </span>
+
+        
+          <span class="post-category" >
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/architecture-design/" itemprop="url" rel="index"><span itemprop="name">architecture design</span></a></span>
+
+              
+              
+                , 
+              
+
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing"><a href="/categories/architecture-design/backend-services/" itemprop="url" rel="index"><span itemprop="name">backend services</span></a></span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <span itemprop="articleBody"><h1 id="What_is_the_high-performance?_And_what_is_the_high-flexibility?"><center>What is the high-performance? And what is the high-flexibility?</center></h1><h3 id="What_is_the_high-performance?">What is the high-performance?</h3><p>What is the high-performance? Variable standards and evaluating can be found in the network. Apart from high TPS and high QPS, high transmission speed, low resources consumption, quick response and others are referred. But, what is the exact definition?</p>
+<p>Currently, we cannot found a distinct definition for the concept of high-performance. So, we need clear and definite the concept for further topics.</p>
+<p>Firstly, for a good designed cluster, the performance of whole cluster can be raised by appending more machines in most cases. For this reason, except for special cases, we think the performance means the performance on a single machine.</p>
+<p>Secondly, for each referred indicators:</p>
+<p><strong>TPS/QPS</strong><br>As the straightforward expression for performance and capability, TPS and QPS ought to be treated as the core indicator for high-performance. Because all machines of a cluster usually in the same subnet, or all machines of a certain sub-cluster for a super-cluster usually in the same subnet, we ignore the difference between TPS and QPS, and using QPS instead of.</p>
+<p><strong>High Transmission Speed</strong><br>Writing a program to drain bandwidth is very easy. Downloading dozens of movies of processing hundreds of thousands of real-time tasks in high frequency will take the same transmission rate. So, high transmission speed is worthless except for the utilizations of network card and bandwidth.</p>
+<p><strong>Low Resources Consumption</strong><br>Lower resources consumption means more services can be provided, but we don’t want the servers lying idle. Idling machines and low utilizations waste of money. We want to know the performance curve when the machines’ load in 60%, 80%, 90% and 100%. So, pure low resources consumption is lacking value.</p>
+<p><strong>Quick Response</strong><br>This is important indicator, but we want to know more. For example, the response speed when macthine’s load in 10%, 50%, 60%, 75%, 80%, 90 and 100%.</p>
+<p><strong>High Concurrency</strong><br>This also is an important indicator for some services. But, please remember, the actual concurrency is depended on the count of cores. In general, QPS is more representatives.</p>
+<p><strong>Mass Connections</strong><br>This is impoerant for some services, such as gate and message pushing. But for the rest of services, they don’t need holding so much connections. So, we only use this indicator when necessary.</p>
+<p>Consequently, I choose the QPS as the main indicator, and using response speed and mass connections if necessary.</p>
+<h3 id="What_is_the_high-flexibility?">What is the high-flexibility?</h3><p>What is the high-flexibility? Free extending? Increase or decrease machines according to the needs? Relative to the high-performance, the description for the high-flexibility found in the network is vague.<br>Because the topic of this introduction is high-performance and high-flexibility distributed system, the concept of flexibility in this article will focus on architecture of systems and clusters.<br>This article uses the description as definition of high-flexibility: A capability that let the system can be free extended, increase or decrease machines or nodes according to the system’s needs in heterogeneous environment, and the cluster mode can be changed easily if necessary. And whether master-slave switching or clusters splitting/merging caused by network state, all can be completed automatically without manual intervention.</p>
+<h3 id="How_to_evaluate?_How_to_compare?">How to evaluate? How to compare?</h3><p>The last, how to evaluate? How to compare? Base on the QPS/loading curve or response-rate/loading curve both are good choices. Since for the article will refer network library and RPC framework, please note:<br><strong>All evaluations and comparisons are need to be questioned if these evaluations or comparisons are not done by youself.</strong><br>Too many things can affect the result, such as the evaluating ways, configurations optimization, and so on.<br>The best way is developing a series of workable servers for each frameworks which will be compared with a certain transaction, and running successively on the same machine with the same environment. Then, compare the results.<br>Except for performance, for framework evaluating, there are some important indicators:</p>
+<ul>
+<li>Is framework ease to learn and use?</li>
+<li>How about the productivity of framework?</li>
+<li>How about the flexibility of framework?</li>
+<li>Which functions and features are supported?</li>
+</ul>
+<p>This is why I don’t recommend ACE, and our companies discard ICE and Facebook Thrift, use the framework developed by ourself to instead of.</p>
+</span>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/distributed/" rel="tag">#distributed</a>
+          
+            <a href="/tags/flexibility/" rel="tag">#flexibility</a>
+          
+            <a href="/tags/performance/" rel="tag">#performance</a>
+          
+            <a href="/tags/server/" rel="tag">#server</a>
+          
+            <a href="/tags/service/" rel="tag">#service</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/08/06/High-Performance-High-Flexibility-Distributed-System-Introduction-4/" rel="prev">High-Performance & High-Flexibility Distributed System Introduction: 4</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/07/25/High-Performance-High-Flexibility-Distributed-System-Introduction-2/" rel="next">High-Performance & High-Flexibility Distributed System Introduction: 2</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+            </div>
+
+            
+
+            
+              <div class="comments" id="comments">
+                
+              </div>
+            
+        </div>
+
+        
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table Of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" src="/images/avatar-120.png" alt="swxlion" itemprop="image"/>
+          <p class="site-author-name" itemprop="name">swxlion</p>
+        </div>
+        <p class="site-description motion-element" itemprop="description"></p>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            <a href="/categories">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">categories</span>
+              </a>
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">10</span>
+              <span class="site-state-item-name">tags</span>
+              </a>
+          </div>
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/swxlion" target="_blank">github</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/swxlion" target="_blank">weibo</a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://www.zhihu.com/people/swxlion" target="_blank">zhihu</a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#What_is_the_high-performance?_And_what_is_the_high-flexibility?"><span class="nav-number">1.</span> <span class="nav-text">What is the high-performance? And what is the high-flexibility?</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What_is_the_high-performance?"><span class="nav-number">1.0.1.</span> <span class="nav-text">What is the high-performance?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What_is_the_high-flexibility?"><span class="nav-number">1.0.2.</span> <span class="nav-text">What is the high-flexibility?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How_to_evaluate?_How_to_compare?"><span class="nav-number">1.0.3.</span> <span class="nav-text">How to evaluate? How to compare?</span></a></li></ol></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+    </main>
+
+    <footer id="footer" class="footer">
+        <div class="footer-inner">
+            <div class="copyright" >
+  
+  &copy; &nbsp; 
+  <span itemprop="copyrightYear">2015</span>
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">swxlion</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+        </div>
+    </footer>
+
+    <div class="back-to-top"></div>
+</div>
+
+<script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+    
+    
+
+  
+
+
+  
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.4"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.4"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.4" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/search-toggle.js"></script>
+
+
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.4" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (CONFIG.sidebar === 'always') {
+            displaySidebar();
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-55acfcb959350be8" async="async"></script>
+
+
+
+<!-- lazyload -->
+<script type="text/javascript" src="/js/lazyload.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery("#posts img").lazyload({
+            placeholder: "/images/loading.gif",
+            effect: "fadeIn"
+        });
+    });
+</script>
+</body>
+</html>
