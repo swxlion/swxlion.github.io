@@ -1,0 +1,117 @@
+MOBILE GAMES PRIVACY POLICY
+
+Update date May 30, 2024
+
+This is the privacy policy for mobile games and applications that we make available from time to time (Applications, Apps). The Applications are operated and provided by swxlion (we, us and our). For the purposes of the General Data Protection Regulation 2016 and the Data Protection Act 2018, we are the data controller and this policy sets out our commitment to protecting your privacy by explaining how we use and collect your personal information within our Applications and what controls you have.
+
+Please read our policy or select from the different section headings below to learn more:
+
+1. Personal information we may collect from you and how we use it
+
+2. Data storage and international transfers
+
+3. Information sharing
+
+4. Security and safety
+
+5. Cookies and other technologies
+
+6. Your rights
+
+7. Our policy regarding children
+
+8. Changes to this Policy
+
+9. Contact us
+
+
+1. Personal information we may collect from you and how we use it
+
+	a. We will use the collected information in accordance with the following rules:
+
+		i. The user name returned when logging in using a third party (used in friend interactions to display friend names) and email address (used for friend application);
+		ii. We will analyze the operation of our products based on the frequency and situation of your use of game products, fault information, performance information, etc. to ensure the security of the service, optimize our products, and improve the quality of our services. We do not combine the information we store in analytics data with personally identifiable information you provide.
+
+	b. When we provide services, the above information will be used to:
+
+		i. Authentication, user services, archiving and backup purposes to ensure the security of the products and services we provide to you.
+
+	c. Collection of information about third parties:
+
+		Except for the social login function, this game product does not use any third-party SDK or use any third-party services.
+
+2. Data storage and international transfers
+
+	As a general rule, we only retain your personal information for as long as necessary to fulfill the purposes for which it was collected. We will retain your personal information for as long as strictly necessary to manage our relationship with you (for example, when you open an account and obtain services from our products). We may need to retain your archived personal information beyond the expiration of the above periods for the purpose of complying with legal obligations or to substantiate a right or contract to satisfy applicable statutes of limitations requirements, and will not be able to delete it at your request. We ensure that your personal information is completely deleted when it is no longer necessary for the purposes or archives for which we are subject to legal obligations or statutory limitations.
+
+	All personal information we collect from you is stored on secure Amazon Web Services servers (https://aws.amazon.com/compliance/data-privacy-faq/), which may be processed, transferred and/or stored outside of the European Economic Area (EEA). If we transfer your information outside the EEA in this way, we will take steps to ensure that your privacy rights continue to be protected. Personal Data collected for the purposes of the our legitimate interests shall be retained as long as needed to fulfill such purposes. You may find specific information regarding the legitimate interests pursued by us within the relevant sections of this document or by contacting us.
+
+	In addition, if you use our services while you are outside the EEA, your information may be transferred outside the EEA to provide you with those services.
+
+3. Information sharing
+
+	When needed to manage our daily business activities and to pursue our legitimate interests to better serve our customers, we will use your personal information in a compliant and appropriate manner. For business and comprehensive consideration of all aspects, we only use this data ourselves and do not share it with any third parties.
+
+	We may share your personal information externally in accordance with laws and regulations, or in accordance with the mandatory requirements of government authorities. Subject to complying with laws and regulations, when we receive the above request to disclose information, we will require the issuance of corresponding legal documents, such as a subpoena or a letter of investigation. We firmly believe that the information we are asked to provide should be as transparent as possible to the extent permitted by law.
+
+	In the following circumstances, sharing, transferring, and publicly disclosing your personal information does not require your prior authorization and consent:
+
+		a. Directly related to national security and national defense security;
+
+		b. Directly related to criminal investigation, prosecution, trial and judgment execution;
+
+		c. To protect your or other individuals’ life, property and other major legitimate rights and interests but it is difficult to obtain your consent;
+
+		d. Personal information that you disclose to the public on your own;
+
+		e. Collect personal information from legally publicly disclosed information, such as legal news reports, government information disclosure and other channels;
+
+		f. Necessary to sign and perform the contract according to the requirements of the personal information subject;
+
+		g. Necessary to maintain the safe and stable operation of the products or services provided, such as discovering and handling product or service failures;
+
+		h. Other situations stipulated by laws and regulations.
+
+4. Security and safety
+
+	a. We strive to provide user information security protection to prevent information leakage, loss, improper use, unauthorized access and disclosure, etc. We use multi-faceted security protection measures to ensure that users' personal information protection is at a reasonable level of security, including technical protection means, management system controls, security system guarantees and many other aspects.
+
+	b. If a security incident such as a personal information leak occurs, we will activate an emergency plan to prevent the impact of the security incident from expanding. After a security incident occurs, we will inform you of the basic situation of the security incident, the handling measures and remedial measures we are about to take or have taken, and our response suggestions to you in the form of announcements, push notifications, or emails. If it is difficult to notify each case one by one, we will issue warnings through announcements and other means.
+
+	c. Please understand that due to technical limitations and risk prevention limitations, even if we have tried our best to strengthen security measures, we cannot always guarantee 100% security of information. You need to understand that the systems and communication networks you use to access relevant game services may have problems due to circumstances beyond our control.
+
+	Please be sure to keep your account number, password and other identity factors properly. When you use relevant game services, we will identify you through your account number, password and other identity factors. Once you disclose the aforementioned information, you may suffer losses or other adverse consequences. If you find that your account number, password and/or other identity elements may or have been leaked, please contact us immediately so that we can take appropriate measures in a timely manner to avoid or reduce related losses.
+
+5. Cookies and other technologies
+
+	We do not use cookies and similar technologies.
+
+6. Your rights
+
+	a. You can log in to your account at any time to view or modify account settings and information. In view of the need for social user identification, the identification information returned by third-party login cannot be modified.
+
+	b. If you find that we collect and use your personal information in violation of laws, administrative regulations or the agreement between the two parties, you can ask us to delete it. If you find that there are errors in your personal information that we collect and store, you can also ask us to correct it. You can contact us through the contact information listed in this policy.
+
+	c. You can apply to cancel your account. After you voluntarily cancel your account, we will stop providing products or services to you, and your personal information will remain in a state that cannot be retrieved, accessed or anonymized. Except where otherwise provided by laws, regulations, administrative regulations, and government normative documents.
+
+	We hereby remind you that you should choose to cancel your account carefully, because canceling your account will affect your normal use of related game services or cause a lot of inconvenience to your subsequent use of related services. Once your account is canceled, it will not be restored. Please Back up all information and data related to your account before operating. Please note that before applying for cancellation, all rights and interests under your account (including but not limited to gold coins, game props, etc.) must be exhausted. If you still insist on applying to cancel your account, all rights and interests under your account will be cleared.
+
+
+7. Our policy regarding children
+
+	Our gaming products are primarily intended for adults, but we are well aware of the importance of taking extra precautions to protect the privacy and security of minors who use our gaming products and services. We encourage parents or guardians to guide minors under the age of 18 in using our games and services. If you are a minor under the age of 18, please submit your personal information and use our services with the express consent of your parent or guardian. If you, your parents or other guardians require us to correct or delete your personal information, we will take prompt measures to correct or delete it, unless otherwise provided by laws and administrative regulations.
+
+	At the same time, we attach great importance to the protection of children's personal information, and all minors under the age of 14 will be considered children. Children must obtain the consent of their guardian before using our game services. Children should not create their own personal account without the consent of a parent or guardian. If you are the legal guardian of a child, please pay attention to whether the child under your guardianship uses our services or provides his or her personal information with your authorization and consent. If a child's guardian explicitly refuses us to provide services to the child in the above manner, we will promptly delete the relevant children's personal information we collect, store, and use in accordance with legal provisions, and stop providing services to the child.
+
+8. Changes to this Policy
+
+	We may revise this policy from time to time. When the terms of this policy change, we will notify you of the changed policy in an appropriate manner when the version is updated. Please read the changed Privacy Policy carefully. Your continued use of the services provided by Celadon indicates that you agree to our collection, processing or use of your personal information in accordance with the updated Privacy Policy.
+
+9. Contact us
+
+	If you have questions, comments or suggestions about the privacy practices of this policy and information-related matters, please contact us by sending an email to swxlion@hotmail.com.
+
+	Under normal circumstances, we will respond within fifteen working days after receiving your questions, comments or suggestions and verifying your user identity.
+
+
+Effective date May 30, 2024
